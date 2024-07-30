@@ -13,7 +13,7 @@ const useSignin = () => {
     e.preventDefault();
     const hashedPassword = await Hashpassword(password);
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
+    const response = await axios.post('https://chat-app-backend-abmj.onrender.com/auth/login', {
         username,
         password: hashedPassword,
       });
