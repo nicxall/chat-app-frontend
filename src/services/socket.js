@@ -9,4 +9,3 @@ const socket_backend = 'https://chat-app-backend-abmj.onrender.com'
 export const socket = io(socket_backend, {
 	transports: ['websocket'], // Asegúrate de usar el transporte adecuado
 });
-//socket para conexion
