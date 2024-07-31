@@ -11,4 +11,4 @@ const RedirectIfAuthenticated = ({children}) => {
 
 }
 
-export { ProtectedRoute, RedirectIfAuthenticated };
+export { Protected, RedirectIfAuthenticated };
