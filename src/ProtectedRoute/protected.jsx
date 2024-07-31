@@ -5,4 +5,10 @@ const Protected = ({children }) => {
     return token ? children : <Navigate to='/'/>
 }
 
-export default Protected;
+const RedirectIfAuthenticated = ({children}) => {
+	const token = localStorage.getItem('token')
+	return token ? <Navigate to ='/home'/> : children
+
+}
+
+export { ProtectedRoute, RedirectIfAuthenticated };
