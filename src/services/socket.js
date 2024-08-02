@@ -1,7 +1,5 @@
 import { io } from 'socket.io-client'
-import { config } from 'dotenv';
 
-config();
 
 //export const socket = io('http://localhost:81') 
 
@@ -10,3 +8,5 @@ const SOCKET_URL = process.env.NODE_ENV === 'production' ? process.env.SOCKET_UR
 export const socket = io(SOCKET_URL, {
 	transports: ['websocket'], // Asegúrate de usar el transporte adecuado
 });
+
+console.log(`En produccion se ejecuta en la url: ${process.env.SOCKET_URL}`)
