@@ -13,25 +13,25 @@ const MessageList = ({ messages, currentUserId, bottomRef }) => {
   }, [messages]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 message-list-container">
       {messages.map((msg) => (
         <div
           key={msg.id}
-          className={`flex ${msg.sender.id === currentUserId ? 'justify-end' : 'justify-start'} items-start`}
+          className={`flex ${msg.sender.id === currentUserId ? 'justify-end' : 'justify-start'} items-start message-item`}
         >
           {msg.sender.id !== currentUserId && (
-            <div className="w-10 h-10 mr-2 flex items-center justify-center rounded-full bg-gray-500 text-white sm:w-8 sm:h-8">
+            <div className="w-10 h-10 mr-2 flex items-center justify-center rounded-full bg-gray-500 text-white message-initials">
               {getInitials(msg.sender.username)}
             </div>
           )}
           <div
-            className={`rounded-lg px-4 py-2 max-w-xs ${msg.sender.id === currentUserId ? 'bg-blue-700 text-white' : 'bg-gray-700 text-white'} sm:px-2 sm:py-1 sm:text-xs`}
+            className={`rounded-lg px-4 py-2 max-w-xs ${msg.sender.id === currentUserId ? 'bg-blue-700 text-white' : 'bg-gray-700 text-white'} message-content`}
           >
-            <div className="font-bold sm:text-sm">{msg.sender.username}</div>
-            <div className="font-normal text-gray-700 dark:text-gray-300 sm:text-xs">{msg.content}</div>
+            <div className="font-bold">{msg.sender.username}</div>
+            <div className="font-normal text-gray-700 dark:text-gray-300">{msg.content}</div>
           </div>
           {msg.sender.id === currentUserId && (
-            <div className="w-10 h-10 ml-2 flex items-center justify-center rounded-full bg-blue-500 text-white sm:w-8 sm:h-8">
+            <div className="w-10 h-10 ml-2 flex items-center justify-center rounded-full bg-blue-500 text-white message-initials-current">
               {getInitials(msg.sender.username)}
             </div>
           )}
