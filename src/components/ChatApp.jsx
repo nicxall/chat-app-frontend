@@ -19,7 +19,7 @@ const ChatApp = () => {
   return (
     <div className="flex flex-col h-screen bg-gray-900 text-white">
       <div className="flex-grow overflow-y-auto p-4">
-        <MessageList messages={messages} currentUserId={userId} bottomRef={bottomRef} />
+        <MessageList messages={messages} currentUserId={userId} bottomRef={bottomRef}/>
       </div>
       <MessageInput
         message={message}
